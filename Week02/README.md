@@ -51,7 +51,7 @@ GetUserName(ctx *gin.Context){
         c.String(500, "服务器正在维护中")
     } else {
         return c.Json(200, map[string]interface{}{
-            "Name": name
+            "Name:"
         })
     }
 }
