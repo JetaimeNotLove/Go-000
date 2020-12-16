@@ -13,7 +13,7 @@ var db *sql.DB
 
 GetUserName(id string)(string, bool, error){
     var result string
-    if err := db.QueryRow("select * from user where id = ?", id).Scan(&result);errors.Is(err, sql.ErrNoRows){
+    if err := db.QueryRow("select Name from user where id = ?", id).Scan(&result);errors.Is(err, sql.ErrNoRows){
        return "", false, nil
     } else {
        return result,err == nil, errors.Wrap(err, "数据查询失败")
